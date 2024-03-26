@@ -6,8 +6,6 @@
     font-display: swap;
 }
 
-
-
 .visually-hidden {
     position: absolute !important;
     width: 1px !important;
@@ -68,13 +66,16 @@
 
 .order-time {
     text-align: start;
+    height: 100px;
+    transition: all 0.2s;
 }
 
 .time {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    opacity: 0;
+    transition: all 0.3s;
 }
 
 .time>label {
@@ -87,10 +88,15 @@
     text-align: center;
 }
 
-.time .at-time:checked {
+.at-time:checked~.time {
     opacity: 1;
+    transition: all 0.3s;
 }
 
+.order-time:has(.at-time:checked) {
+    height: 170px;
+    transition: all 0.2s;
+}
 
 #comment {
     min-width: 300px;
@@ -98,11 +104,7 @@
     resize: none;
 }
 
-
-
-
-.reset-button {
-    background-color: #f4511e;
+.button {
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
@@ -110,34 +112,54 @@
     text-align: center;
     font-size: 30px;
     color: #ffffff;
+}
+
+.reset-button {
+    background-color: #f4511e;
     min-width: 200px;
     max-width: 200px;
 }
 
-.reset-button-arrow {
-    position: relative;
-    left: 10px;
-    transition: all 0.5s ease 0s;
+.ok-button {
+    background-color: #40a44a;
+    margin-bottom: 20px;
+    min-width: 270px;
+    max-width: 270px;
 }
 
-.reset-button-arrow::after {
-    content: '\2718';
+.button-arrow {
+    position: relative;
+    left: 10px;
+    transition: all 0.5s;
+}
+
+.ok {
+    left: 5px;
+}
+
+.button-arrow::after {
     opacity: 0;
     margin-left: 5px;
     font-size: 20px;
-    transition: all 0.5s ease 0s;
+    transition: all 0.5s;
 }
 
+.ok::after {
+    content: '\2714';
+}
 
+.reset::after {
+    content: '\2718';
+}
 
 @media (hover: hover) {
-    .reset-button:hover .reset-button-arrow::after {
-        transition: all 0.5s ease 0s;
+    .button:hover .button-arrow::after {
+        transition: all 0.5s;
         opacity: 1;
     }
 
-    .reset-button:hover .reset-button-arrow {
+    .button:hover .button-arrow {
         left: 0;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s;
     }
 }

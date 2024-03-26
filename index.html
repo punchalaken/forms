@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Заказ</title>
+    <title>Оформлдение заказа</title>
 </head>
 
 <body>
@@ -28,6 +28,7 @@
 
 
                 <fieldset class="order-time">
+
                     <legend>Выберите время</legend>
 
                     <input type="radio" name="order-time" value="now" id="now"> 
@@ -48,10 +49,6 @@
 
                 </fieldset>
 
-
-
-
-
                 <label for="promotion">Выберете акцию</label>
                 <select name="promotion" id="promotion">
                     <option value="" disabled selected>Выберети акцию</option>
@@ -67,11 +64,15 @@
                 <textarea name="comment" id="comment" rows="7"
                     placeholder="Привезите заказ побыстрее, я голодный!"></textarea>
 
-
-
-                <button type="reset" title="Reset menu" class="reset-button">
+                <button type="submit" title="ok" class="ok-button button">
                     <span class="visually-hidden">Сброс заказа</span>
-                    <span class="reset-button-arrow">Отмена</span>
+                    <span class="button-arrow ok">Подтвердить</span>
+                </button>
+    
+                
+                <button type="reset" title="Reset menu" class="reset-button button">
+                    <span class="visually-hidden">Сброс заказа</span>
+                    <span class="button-arrow reset">Отмена</span>
                 </button>
 
             </form>
