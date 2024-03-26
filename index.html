@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Заказ</title>
+</head>
+
+<body>
+    <main class="main">
+        <div class="conteiner">
+
+            <form name="order" class="order" id="order">
+
+                <label for="first-name">Имя</label>
+                <input type="text" id="name" placeholder="Иван">
+
+                <label for="last-name">Фамилия</label>
+                <input type="text" id="name" placeholder="Иванов">
+
+                <label for="telephone">Номер для связи</label>
+                <input type="tel" id="telephone" placeholder="+7(999) 999-99-99">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="ivan.ivanov@yandex.ru">
+
+
+                <fieldset class="order-time">
+                    <legend>Выберите время</legend>
+
+                    <input type="radio" name="order-time" value="now" id="now"> 
+                    <label for="now">Как можно быстрее</label>
+
+                    <input type="radio" name="order-time" value="at-time" id="at-time" class="at-time"> 
+                    <label for="at-time">Ко времени</label>
+
+                    <div class="time">
+                        <label for="time-choose">Дата:</label>
+                        <input 
+                            type="datetime-local" 
+                            id="time-choose" 
+                            value="2024-03-26T20:00" 
+                            min="2024-03-26T20:00"
+                            max="2024-04-26T20:00">
+                    </div>
+
+                </fieldset>
+
+
+
+
+
+                <label for="promotion">Выберете акцию</label>
+                <select name="promotion" id="promotion">
+                    <option value="" disabled selected>Выберети акцию</option>
+                    <option value="1+1">2 по цене 1</option>
+                    <option value="3=4">3 по цене 4</option>
+                    <option value="1=9">1 по цене 9</option>
+                    <option value="clothes">Я за одеждой</option>
+                    <option value="drink">Пьяный полдник</option>
+                    <option value="vegan">Веганы</option>
+                </select>
+
+                <label for="comment">Комментарий</label>
+                <textarea name="comment" id="comment" rows="7"
+                    placeholder="Привезите заказ побыстрее, я голодный!"></textarea>
+
+
+
+                <button type="reset" title="Reset menu" class="reset-button">
+                    <span class="visually-hidden">Сброс заказа</span>
+                    <span class="reset-button-arrow">Отмена</span>
+                </button>
+
+            </form>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

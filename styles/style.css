@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 22px;
+    color: #6134ab;
+}
+
+.conteiner {
+    box-sizing: border-box;
+    max-width: 360px;
+    min-width: 360px;
+    padding: 20px 30px;
+    border: 2px solid #40a44a;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.order>label,
+.order-information>label {
+    margin-bottom: 5px;
+}
+
+.order>input,
+.order>select,
+.order>textarea,
+.order-time {
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    min-width: 200px;
+    border: 2px solid #40a44a;
+}
+
+.order-time>legend {
+    text-align: center;
+}
+
+.order-time {
+    text-align: start;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.time>label {
+    margin-block: 5px;
+}
+
+.time>input {
+    min-width: 200px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.time .at-time:checked {
+    opacity: 1;
+}
+
+
+#comment {
+    min-width: 300px;
+    max-width: 300px;
+    resize: none;
+}
+
+
+
+
+.reset-button {
+    background-color: #f4511e;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.reset-button-arrow {
+    position: relative;
+    left: 10px;
+    transition: all 0.5s ease 0s;
+}
+
+.reset-button-arrow::after {
+    content: '\2718';
+    opacity: 0;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease 0s;
+}
+
+
+
+@media (hover: hover) {
+    .reset-button:hover .reset-button-arrow::after {
+        transition: all 0.5s ease 0s;
+        opacity: 1;
+    }
+
+    .reset-button:hover .reset-button-arrow {
+        left: 0;
+        transition: all 0.5s ease 0s;
+    }
+}
