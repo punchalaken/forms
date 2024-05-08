@@ -152,6 +152,10 @@
     content: '\2718';
 }
 
+input.invalid {
+    border-color: red;
+}
+
 @media (hover: hover) {
     .button:hover .button-arrow::after {
         transition: all 0.5s;
