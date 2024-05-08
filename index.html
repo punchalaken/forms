@@ -15,15 +15,20 @@
             <form name="order" class="order">
 
                 <label for="first-name">Имя</label>
+                <div class="correct">Обязательное поле</div>
                 <input type="text" id="name" placeholder="Иван"/>
 
                 <label for="last-name">Фамилия</label>
+                <div class="correct">Обязательное поле</div>
                 <input type="text" id="surename" placeholder="Иванов"/>
 
+
                 <label for="telephone">Номер для связи</label>
+                <div class="correct">Обязательное поле</div>
                 <input type="tel" id="telephone" placeholder="+7(999)999-99-99"/>
 
                 <label for="email">Email</label>
+                <div class="correct">Обязательное поле</div>
                 <input type="email" id="email" placeholder="ivan.ivanov@yandex.ru" />
 
                 <fieldset class="order-time">
@@ -44,9 +49,9 @@
 
                 </fieldset>
 
-                <label for="promotion">Выберете акцию</label>
+                <label for="promotion">Выберите акцию</label>
                 <select name="promotion" id="promotion">
-                    <option value="No" disabled selected>Выберети акцию</option>
+                    <option value="No" disabled selected>Выберите акцию</option>
                     <option value="1+1">2 по цене 1</option>
                     <option value="3=4">3 по цене 4</option>
                     <option value="1=9">1 по цене 9</option>
@@ -77,7 +82,7 @@
     <script>
         
         function setTime() {
-            const nowValueDate = `${new Date().getFullYear()}-${new Date().toLocaleString('default', { month: '2-digit' })}-${new Date().getDate().toString().padStart(2, '0')}T${new Date().getHours().toLocaleString('default', { minimumIntegerDigits: 2 })}:${new Date().getMinutes().toLocaleString('default', { minimumIntegerDigits: 2 })}`
+            const nowValueDate = `${new Date().getFullYear()}-${new Date().toLocaleString('default', { month: '2-digit' })}-${new Date().getDate().toString().padStart(2, '0')}T${(new Date().getHours()).toLocaleString('default', { minimumIntegerDigits: 2 })}:${new Date().getMinutes().toLocaleString('default', { minimumIntegerDigits: 2 })}`
             const maxValueDate = `${new Date().getFullYear()}-${(new Date().getMonth() + 2).toLocaleString('default', { minimumIntegerDigits: 2 })}-${new Date().getDate().toString().padStart(2, '0')}T${new Date().getHours().toLocaleString('default', { minimumIntegerDigits: 2 })}:${new Date().getMinutes().toLocaleString('default', { minimumIntegerDigits: 2 })}`
 
             const inputElement = document.getElementById('time-choose')
@@ -97,14 +102,16 @@
         }
 
         function addInvalidClass(item) {
-            let inputs = checkInput()
             if (!item.target.value){
                 item.target.classList.add('invalid')
+                item.target.previousElementSibling.classList.add('error');
             }    
+
         }
 
         function removeInvalidClass(item){
             item.target.classList.remove('invalid')
+            item.target.previousElementSibling.classList.remove('error');
         }
 
         function setInvalid(){
@@ -126,7 +133,7 @@
                 inputs.forEach(item => item.classList.add('invalid'))
             } else {
                 
-                console.log('Считался какой-то очень уменый код по отправке формы\nФорма отправлена!')
+                console.log('Считался какой-то очень умный код по отправке формы!\nФорма отправлена!')
                 
             }
         }

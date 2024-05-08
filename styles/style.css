@@ -156,6 +156,18 @@ input.invalid {
     border-color: red;
 }
 
+.correct{
+    display: none;
+}
+
+.error{
+    display: block;
+    font-size: 10px;
+    color: red;
+}
+
+
+
 @media (hover: hover) {
     .button:hover .button-arrow::after {
         transition: all 0.5s;
