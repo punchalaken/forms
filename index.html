@@ -111,14 +111,14 @@
 
         function removeInvalidClass(item){
             item.target.classList.remove('invalid')
-            item.target.previousElementSibling.classList.remove('error');
+             item.target.previousElementSibling.classList.remove('error');
         }
 
         function setInvalid(){
             let inputs = checkInput()
 
             inputs.forEach(element => {
-                element.addEventListener('click', removeInvalidClass)
+                element.addEventListener('focus', removeInvalidClass)
 
                 element.addEventListener('blur', addInvalidClass);
         })};
